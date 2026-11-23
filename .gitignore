@@ -31,3 +31,7 @@ outputs/*
 
 # Logs
 *.log
+
+dataset/
+dataset/
+dataset/
