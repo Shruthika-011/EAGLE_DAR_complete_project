@@ -14,9 +14,8 @@ ROOT = Path(__file__).resolve().parent
 DATASET_ROOT = ROOT / "dataset_source"
 TRAIN_DIR = DATASET_ROOT / "train"
 
-SOURCE_IMAGES = TRAIN_DIR / "images"
-SOURCE_LABELS = TRAIN_DIR / "labels"
-
+SOURCE_IMAGES = ROOT / "dataset" / "raw" / "train" / "images"
+SOURCE_LABELS = ROOT / "dataset" / "raw" / "train" / "labels"
 # ============================================================
 # GENERATED PROCESSED DATA
 # ============================================================
@@ -99,21 +98,8 @@ CROP_PADDING = 8
 # ============================================================
 
 PAIR_RULES = {
-    "before": [
-        "_pre",
-        "_pre_disaster",
-        "-pre-disaster",
-        "_before",
-        "-before",
-    ],
-
-    "after": [
-        "_post",
-        "_post_disaster",
-        "-post-disaster",
-        "_after",
-        "-after",
-    ],
+    "before": ["_pre"],
+    "after": ["_post"],
 }
 
 # ============================================================
