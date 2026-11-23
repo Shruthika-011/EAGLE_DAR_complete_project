@@ -1,0 +1,33 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyd
+.Python
+.venv/
+venv/
+.env
+.env.*
+
+# IDE / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Datasets and generated artifacts
+train/images/*
+!train/images/.gitkeep
+train/labels/*
+!train/labels/.gitkeep
+processed/
+runs/
+*.pt
+*.pth
+*.onnx
+
+# Runtime outputs
+outputs/*
+!outputs/.gitkeep
+
+# Logs
+*.log
