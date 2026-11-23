@@ -1,0 +1,1 @@
+{"features": {"xy": [{"properties": {"feature_type": "building", "subtype": "un-classified", "uid": "b0000"}, "wkt": "POLYGON ((983.3 974.51, 978.34 974.41, 977.93 980.9, 982.9 981.0, 983.3 974.51))"}]}, "metadata": {"disaster": "socal-fire", "disaster_type": "fire", "width": 1024, "height": 1024}}

@@ -1,0 +1,90 @@
+{
+ "type_1": [
+  "How many {lvl} are there {scope}?",
+  "Count the {lvl} {scope}."
+ ],
+ "type_2": {
+  "damaged": [
+   "Which quadrant has the most damaged buildings?",
+   "Which quadrant of the image contains the largest number of damaged buildings (minor, major or destroyed)?"
+  ],
+  "destroyed": [
+   "Which quadrant has the most destroyed buildings?"
+  ]
+ },
+ "type_3": [
+  "Is the {a} half of the image more damaged than the {b} half?",
+  "Does the {a} half of the image have more damaged buildings than the {b} half?"
+ ],
+ "type_4_out_of_scope_examples": [
+  "How many people lived in the destroyed buildings?",
+  "How many buildings will need to be rebuilt next year?",
+  "Which building in the image is a hospital?",
+  "What date was the post-disaster image taken?"
+ ],
+ "rules": [
+  "Quadrants and halves split the image at its centre; a building belongs to the part that contains its centre.",
+  "'Damaged' means minor damage, major damage or destroyed.",
+  "If the image contains no buildings at all, quadrant and half questions are answered 'cannot be determined'.",
+  "Questions that the images cannot answer are answered 'cannot be determined'."
+ ],
+ "levels": {
+  "no-damage": "undamaged buildings",
+  "minor-damage": "buildings with minor damage",
+  "major-damage": "buildings with major damage",
+  "destroyed": "destroyed buildings",
+  "damaged": "damaged buildings (minor, major or destroyed)"
+ },
+ "quadrants": {
+  "top-left": [
+   0,
+   0,
+   512,
+   512
+  ],
+  "top-right": [
+   512,
+   0,
+   1024,
+   512
+  ],
+  "bottom-left": [
+   0,
+   512,
+   512,
+   1024
+  ],
+  "bottom-right": [
+   512,
+   512,
+   1024,
+   1024
+  ]
+ },
+ "halves": {
+  "left": [
+   0,
+   0,
+   512,
+   1024
+  ],
+  "right": [
+   512,
+   0,
+   1024,
+   1024
+  ],
+  "top": [
+   0,
+   0,
+   1024,
+   512
+  ],
+  "bottom": [
+   0,
+   512,
+   1024,
+   1024
+  ]
+ }
+}

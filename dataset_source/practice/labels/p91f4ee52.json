@@ -1,0 +1,1 @@
+{"features": {"xy": [{"properties": {"feature_type": "building", "subtype": "major-damage", "uid": "b0000"}, "wkt": "POLYGON ((1024.0 941.83, 1024.0 904.19, 994.1 897.6, 987.02 920.92, 986.61 935.49, 1024.0 941.83))"}]}, "metadata": {"disaster": "hurricane-harvey", "disaster_type": "flooding", "width": 1024, "height": 1024}}

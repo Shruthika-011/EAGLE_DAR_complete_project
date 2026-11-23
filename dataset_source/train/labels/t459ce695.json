@@ -1,0 +1,1 @@
+{"features": {"xy": [{"properties": {"feature_type": "building", "subtype": "minor-damage", "uid": "b0000"}, "wkt": "POLYGON ((842.79 146.08, 841.61 152.86, 829.22 152.57, 833.06 104.77, 821.85 103.3, 824.5 69.07, 848.4 71.73, 842.79 146.08))"}]}, "metadata": {"disaster": "guatemala-volcano", "disaster_type": "volcano", "width": 1024, "height": 1024}}

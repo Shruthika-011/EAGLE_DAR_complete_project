@@ -85,7 +85,7 @@ def main():
             continue
 
         # The post-disaster annotation JSON must share the post image stem.
-        label_path = SOURCE_LABELS / f"{after_path.stem}.json"
+        label_path = SOURCE_LABELS / f"{key}.json"
         if not label_path.exists():
             print(f"Skip {key}: missing post-disaster JSON {label_path.name}")
             continue

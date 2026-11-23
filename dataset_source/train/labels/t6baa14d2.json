@@ -1,0 +1,1 @@
+{"features": {"xy": [{"properties": {"feature_type": "building", "subtype": "destroyed", "uid": "b0000"}, "wkt": "POLYGON ((718.52 240.33, 724.32 245.83, 730.4 239.17, 724.9 233.66, 718.52 240.33))"}]}, "metadata": {"disaster": "midwest-flooding", "disaster_type": "flooding", "width": 1024, "height": 1024}}

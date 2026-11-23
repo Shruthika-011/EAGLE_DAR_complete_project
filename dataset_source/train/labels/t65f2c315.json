@@ -1,0 +1,1 @@
+{"features": {"xy": [{"properties": {"feature_type": "building", "subtype": "no-damage", "uid": "b0000"}, "wkt": "POLYGON ((46.33 948.26, 52.75 940.22, 43.28 933.7, 37.06 941.44, 46.33 948.26))"}]}, "metadata": {"disaster": "hurricane-matthew", "disaster_type": "wind", "width": 1024, "height": 1024}}

@@ -1,0 +1,1 @@
+{"features": {"xy": [{"properties": {"feature_type": "building", "subtype": "no-damage", "uid": "b0000"}, "wkt": "POLYGON ((811.34 443.3, 790.72 447.25, 787.65 428.83, 807.4 425.75, 811.34 443.3))"}]}, "metadata": {"disaster": "hurricane-michael", "disaster_type": "wind", "width": 1024, "height": 1024}}

@@ -1,28 +1,58 @@
+
 from pathlib import Path
+
+# ============================================================
+# PROJECT ROOT
+# ============================================================
 
 ROOT = Path(__file__).resolve().parent
 
-# Existing user dataset
-SOURCE_IMAGES = ROOT / "train" / "images"
-SOURCE_LABELS = ROOT / "train" / "labels"
+# ============================================================
+# SOURCE DATASET - HUGGING FACE DATASET
+# ============================================================
 
-# Generated data
+DATASET_ROOT = ROOT / "dataset_source"
+TRAIN_DIR = DATASET_ROOT / "train"
+
+SOURCE_IMAGES = TRAIN_DIR / "images"
+SOURCE_LABELS = TRAIN_DIR / "labels"
+
+# ============================================================
+# GENERATED PROCESSED DATA
+# ============================================================
+
 PROCESSED = ROOT / "processed"
+
+# YOLO dataset
 YOLO_ROOT = PROCESSED / "yolo"
 YOLO_IMAGES = YOLO_ROOT / "images"
 YOLO_LABELS = YOLO_ROOT / "labels"
+
+# Metadata
 METADATA_DIR = PROCESSED / "metadata"
+
+# Siamese CNN dataset
 SIAMESE_ROOT = PROCESSED / "siamese"
 SIAMESE_CROPS = SIAMESE_ROOT / "crops"
 
-# Models and outputs
+# ============================================================
+# MODELS AND TRAINING OUTPUTS
+# ============================================================
+
 RUNS_DIR = ROOT / "runs"
 MODELS_DIR = ROOT / "models"
 OUTPUTS_DIR = ROOT / "outputs"
 
-# YOLO segmentation: one class only. Damage classes are retained for Siamese.
+# ============================================================
+# YOLO SEGMENTATION CONFIGURATION
+# ============================================================
+
 BUILDING_CLASS_ID = 0
 BUILDING_CLASS_NAME = "building"
+
+# ============================================================
+# DAMAGE CLASS CONFIGURATION
+# ============================================================
 
 DAMAGE_CLASSES = {
     "no-damage": 0,
@@ -31,17 +61,74 @@ DAMAGE_CLASSES = {
     "destroyed": 3,
     "un-classified": 4,
 }
-DAMAGE_NAMES = {v: k for k, v in DAMAGE_CLASSES.items()}
 
-IMAGE_EXTENSIONS = [".png", ".jpg", ".jpeg", ".tif", ".tiff", ".bmp"]
+DAMAGE_NAMES = {
+    value: key
+    for key, value in DAMAGE_CLASSES.items()
+}
+
+# ============================================================
+# IMAGE CONFIGURATION
+# ============================================================
+
+IMAGE_EXTENSIONS = [
+    ".png",
+    ".jpg",
+    ".jpeg",
+    ".tif",
+    ".tiff",
+    ".bmp",
+]
+
+# ============================================================
+# DATASET SPLIT
+# ============================================================
+
 VAL_FRACTION = 0.20
 RANDOM_SEED = 42
+
+# ============================================================
+# BUILDING CROP CONFIGURATION
+# ============================================================
+
 CROP_SIZE = 128
 CROP_PADDING = 8
 
-# Expected pair tokens in image filenames. The scene key is the filename
-# after removing one of these tokens and the extension.
+# ============================================================
+# BEFORE / AFTER IMAGE PAIR RULES
+# ============================================================
+
 PAIR_RULES = {
-    "before": ["_pre_disaster", "-pre-disaster", "_before", "-before"],
-    "after": ["_post_disaster", "-post-disaster", "_after", "-after"],
+    "before": [
+        "_pre",
+        "_pre_disaster",
+        "-pre-disaster",
+        "_before",
+        "-before",
+    ],
+
+    "after": [
+        "_post",
+        "_post_disaster",
+        "-post-disaster",
+        "_after",
+        "-after",
+    ],
 }
+
+# ============================================================
+# DATASET VALIDATION
+# ============================================================
+
+if not SOURCE_IMAGES.exists():
+    print(f"WARNING: Image directory not found: {SOURCE_IMAGES}")
+
+if not SOURCE_LABELS.exists():
+    print(f"WARNING: Label directory not found: {SOURCE_LABELS}")
+
+print("EAGLE-DAR CONFIGURATION LOADED")
+print("Project root:", ROOT)
+print("Source images:", SOURCE_IMAGES)
+print("Source labels:", SOURCE_LABELS)
+print("Processed directory:", PROCESSED)
+print("YOLO directory:", YOLO_ROOT)
