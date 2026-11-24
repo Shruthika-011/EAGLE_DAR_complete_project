@@ -1,0 +1,42 @@
+{
+  "analysis_id": "9e6910ef96aa4885b87e48c61a82a9a8",
+  "questions": [
+    {
+      "id": "q11edb03",
+      "question": "Is the bottom half of the image more damaged than the top half?"
+    },
+    {
+      "id": "q_count_destroyed",
+      "question": "Count the destroyed buildings in the image."
+    },
+    {
+      "id": "q_quad",
+      "question": "Which quadrant has the most damaged buildings?"
+    },
+    {
+      "id": "q_struct",
+      "structured": {
+        "type": 1,
+        "level": "no-damage",
+        "scope": {
+          "kind": "quadrant",
+          "name": "top-left"
+        }
+      }
+    },
+    {
+      "id": "q_halves",
+      "structured": {
+        "type": 3,
+        "halves": [
+          "left",
+          "right"
+        ]
+      }
+    },
+    {
+      "id": "q_hospital",
+      "question": "Which building in the image is a hospital?"
+    }
+  ]
+}

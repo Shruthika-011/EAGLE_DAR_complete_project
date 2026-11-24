@@ -1,0 +1,64 @@
+{
+  "analysis_id": "9e6910ef96aa4885b87e48c61a82a9a8",
+  "generated_utc": "2026-11-23T22:31:30+00:00",
+  "generation": "Deterministic templates over computed facts; no language model was used, so no figure in this report is generated text.",
+  "sections": [
+    {
+      "title": "Summary",
+      "paragraphs": [
+        "77 buildings were detected in the post-disaster image. 4 (5.2%) were classified as damaged: 0 minor, 0 major and 4 destroyed. 71 were classified as no damage and 2 as un-classified (un-classified buildings are not counted as damaged).",
+        "The top-right quadrant contains the most damaged buildings (2).",
+        "Damaged buildings by half: left 1, right 3; the right half has more.",
+        "Damaged buildings by half: top 3, bottom 1; the top half has more."
+      ]
+    },
+    {
+      "title": "Confidence",
+      "paragraphs": [
+        "Building-level confidence (detection score x damage-class probability): mean 0.286, minimum 0.105, maximum 0.588. Confidence levels: 0 high, 11 medium, 66 low.",
+        "66 building(s) fall below the low-confidence threshold of 0.35.",
+        "These values are uncalibrated model scores; they rank how strongly the model supports a prediction and are not probabilities that the prediction is correct."
+      ]
+    },
+    {
+      "title": "Data quality and limitations",
+      "paragraphs": [
+        "Before/after alignment: minor_offset (estimated shift 7.5 px via phase_correlation). ",
+        "Counts are model predictions, not ground truth.",
+        "On the held-out validation images the building segmentation model reached mask recall 0.21 and mask precision 0.35; buildings it misses are absent from every count above.",
+        "On the PS-04 practice scenes (alignment mode 'check') the full pipeline's building recall was 0.12 and precision 0.55 at IoU 0.5.",
+        "On the PS-04 practice scenes (alignment mode 'register') the full pipeline's building recall was 0.12 and precision 0.55 at IoU 0.5.",
+        "This report has not been validated against the official PS-04 evaluation. Verify visually before operational use."
+      ]
+    },
+    {
+      "title": "Questions answered",
+      "paragraphs": [
+        "q11edb03: Is the bottom half of the image more damaged than the top half? -> no (region [0, 0, 1024, 512])",
+        "q_count_destroyed: Count the destroyed buildings in the image. -> 4 (region [155, 0, 737, 839])",
+        "q_quad: Which quadrant has the most damaged buildings? -> top-right (region [512, 0, 1024, 512])",
+        "q_struct: structured: {\"type\":1,\"level\":\"no-damage\",\"scope\":{\"kind\":\"quadrant\",\"name\":\"top-left\"}} -> 18 (region [2, 0, 466, 410])",
+        "q_halves: structured: {\"type\":3,\"halves\":[\"left\",\"right\"]} -> no (region [512, 0, 1024, 1024])",
+        "q_hospital: Which building in the image is a hospital? -> cannot be determined",
+        "q1da828aa: How many undamaged buildings are there in the top-left quadrant? -> 18 (region [2, 0, 466, 410])"
+      ]
+    }
+  ],
+  "facts": {
+    "scene": {
+      "scene_id": "9e6910ef96aa4885b87e48c61a82a9a8",
+      "width": 1024,
+      "height": 1024,
+      "total_buildings": 77
+    },
+    "damage_counts": {
+      "no-damage": 71,
+      "minor-damage": 0,
+      "major-damage": 0,
+      "destroyed": 4,
+      "un-classified": 2
+    },
+    "damaged_total": 4,
+    "damaged_fraction": 0.0519
+  }
+}

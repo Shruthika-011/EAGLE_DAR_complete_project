@@ -1,0 +1,67 @@
+[
+  {
+    "id": "q11edb03",
+    "answer": "no",
+    "region": [
+      0,
+      0,
+      1024,
+      512
+    ]
+  },
+  {
+    "id": "q_count_destroyed",
+    "answer": 4,
+    "region": [
+      155,
+      0,
+      737,
+      839
+    ]
+  },
+  {
+    "id": "q_quad",
+    "answer": "top-right",
+    "region": [
+      512,
+      0,
+      1024,
+      512
+    ]
+  },
+  {
+    "id": "q_struct",
+    "answer": 18,
+    "region": [
+      2,
+      0,
+      466,
+      410
+    ]
+  },
+  {
+    "id": "q_halves",
+    "answer": "no",
+    "region": [
+      512,
+      0,
+      1024,
+      1024
+    ]
+  },
+  {
+    "id": "q_hospital",
+    "answer": "cannot be determined",
+    "region": null
+  },
+  {
+    "id": "q1da828aa",
+    "answer": 18,
+    "region": [
+      2,
+      0,
+      466,
+      410
+    ]
+  }
+]

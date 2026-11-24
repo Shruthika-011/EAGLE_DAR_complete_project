@@ -1,0 +1,35 @@
+{
+  "status": "ok",
+  "api_version": "1.0.0",
+  "models": {
+    "yolo": {
+      "file": "best.pt",
+      "exists": true,
+      "loaded": true
+    },
+    "siamese": {
+      "file": "siamese_damage.pth",
+      "exists": true,
+      "loaded": true
+    },
+    "load_error": null
+  },
+  "device": {
+    "in_use": "cuda",
+    "requested": "auto",
+    "cuda_available": true,
+    "gpu": {
+      "name": "NVIDIA GeForce RTX 3050 Laptop GPU",
+      "memory_free_mb": 3165,
+      "memory_total_mb": 4095
+    }
+  },
+  "storage": {
+    "writable": true
+  },
+  "limits": {
+    "max_upload_mb": 25,
+    "max_pixels": 16777216,
+    "max_pending_requests": 4
+  }
+}

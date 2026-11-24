@@ -1,0 +1,15 @@
+# EAGLE-DAR backend. Install the project requirements first (ultralytics, torch, opencv, shapely, ...):
+#   pip install -r requirements.txt
+-r ../requirements.txt
+
+fastapi>=0.115,<1.0
+uvicorn>=0.34
+python-multipart>=0.0.20     # multipart uploads (POST /api/analyze)
+pydantic>=2.10
+reportlab>=4.0               # PDF assessment reports
+httpx>=0.28                  # optional LLM explanation client (off by default)
+
+# tests only
+pytest>=8.0
+pypdf>=4.0                   # read PDF text back in tests
+pymupdf>=1.24                # render PDF pages / layout checks in tests

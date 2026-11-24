@@ -66,6 +66,34 @@ DAMAGE_NAMES = {
     for key, value in DAMAGE_CLASSES.items()
 }
 
+# ------------------------------------------------------------
+# APPLICATION-LEVEL CLASSES (what the pipeline, API, reports and UI show)
+#
+# The trained Siamese model still has the five outputs above. At inference the
+# 'un-classified' output is ignored (argmax over the other four) and
+# 'minor-damage' is merged into 'major-damage', so the app works with three
+# classes. Training / evaluation scripts keep using DAMAGE_CLASSES above.
+# ------------------------------------------------------------
+
+APP_DAMAGE_CLASSES = {
+    "no-damage": 0,
+    "major-damage": 1,
+    "destroyed": 2,
+}
+
+APP_DAMAGE_NAMES = {value: key for key, value in APP_DAMAGE_CLASSES.items()}
+
+# model output index -> app class index (4 = un-classified has no app class)
+MODEL_TO_APP_CLASS = {0: 0, 1: 1, 2: 1, 3: 2}
+
+# dataset 'subtype' string -> app class name (anything else is not an app class)
+SUBTYPE_TO_APP_NAME = {
+    "no-damage": "no-damage",
+    "minor-damage": "major-damage",
+    "major-damage": "major-damage",
+    "destroyed": "destroyed",
+}
+
 # ============================================================
 # IMAGE CONFIGURATION
 # ============================================================
@@ -101,6 +129,31 @@ PAIR_RULES = {
     "before": ["_pre"],
     "after": ["_post"],
 }
+
+# ============================================================
+# INFERENCE CONFIGURATION
+# ============================================================
+
+# Trained weights actually produced by training (runs/eagle_buildings/ is empty;
+# the completed run is eagle_buildings-2).
+YOLO_WEIGHTS = RUNS_DIR / "eagle_buildings-2" / "weights" / "best.pt"
+SIAMESE_WEIGHTS = MODELS_DIR / "siamese_damage.pth"
+
+YOLO_CONF = 0.25
+YOLO_IMGSZ = 640
+YOLO_IOU = 0.7
+YOLO_MAX_DET = 1000
+
+# Three-class colour-coded damage map (BGR for OpenCV).
+DAMAGE_COLORS_BGR = {
+    "no-damage": (80, 175, 76),       # green
+    "major-damage": (0, 152, 255),    # orange
+    "destroyed": (54, 67, 244),       # red
+}
+
+# Quadrants and halves follow PS-04 rules: split at image centre,
+# a building belongs to the part containing its centre.
+DAMAGED_CLASSES = ("major-damage", "destroyed")
 
 # ============================================================
 # DATASET VALIDATION

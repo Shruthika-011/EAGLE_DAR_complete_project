@@ -1,0 +1,811 @@
+{
+  "analysis_id": "9e6910ef96aa4885b87e48c61a82a9a8",
+  "results": [
+    {
+      "official": {
+        "id": "q11edb03",
+        "answer": "no",
+        "region": [
+          0,
+          0,
+          1024,
+          512
+        ]
+      },
+      "internal": {
+        "question_type": 3,
+        "question_text": "Is the bottom half of the image more damaged than the top half?",
+        "parsed": {
+          "level": null,
+          "scope": [
+            null,
+            null
+          ],
+          "halves": [
+            "bottom",
+            "top"
+          ],
+          "reason": null
+        },
+        "details": {
+          "first_half": "bottom",
+          "second_half": "top",
+          "damaged_counts": {
+            "bottom": 1,
+            "top": 3
+          },
+          "region_basis": "half_with_more_damaged",
+          "min_confidence": 0.0,
+          "rules_version": "1.0.0",
+          "image_size": [
+            1024,
+            1024
+          ],
+          "total_buildings": 77
+        },
+        "evidence": {
+          "region": [
+            0,
+            0,
+            1024,
+            512
+          ],
+          "region_name": "top half",
+          "supporting_building_ids": [
+            21,
+            39,
+            53
+          ],
+          "supporting_buildings": [
+            {
+              "building_id": 21,
+              "damage": "destroyed",
+              "confidence": 0.2964,
+              "centre": [
+                718.33,
+                71.56
+              ],
+              "bbox": [
+                700,
+                53,
+                737,
+                92
+              ]
+            },
+            {
+              "building_id": 39,
+              "damage": "destroyed",
+              "confidence": 0.1385,
+              "centre": [
+                169.93,
+                13.56
+              ],
+              "bbox": [
+                155,
+                0,
+                186,
+                28
+              ]
+            },
+            {
+              "building_id": 53,
+              "damage": "destroyed",
+              "confidence": 0.1092,
+              "centre": [
+                594.66,
+                242.76
+              ],
+              "bbox": [
+                572,
+                230,
+                617,
+                257
+              ]
+            }
+          ],
+          "map_url": "/api/analysis/9e6910ef96aa4885b87e48c61a82a9a8/map?evidence=0,0,1024,512&highlight=21,39,53",
+          "highlight_truncated": false
+        }
+      }
+    },
+    {
+      "official": {
+        "id": "q_count_destroyed",
+        "answer": 4,
+        "region": [
+          155,
+          0,
+          737,
+          839
+        ]
+      },
+      "internal": {
+        "question_type": 1,
+        "question_text": "Count the destroyed buildings in the image.",
+        "parsed": {
+          "level": "destroyed",
+          "scope": [
+            "image",
+            null
+          ],
+          "halves": null,
+          "reason": null
+        },
+        "details": {
+          "level": "destroyed",
+          "scope": [
+            "image",
+            null
+          ],
+          "buildings_in_scope": 77,
+          "region_basis": "union_of_counted_buildings",
+          "min_confidence": 0.0,
+          "rules_version": "1.0.0",
+          "image_size": [
+            1024,
+            1024
+          ],
+          "total_buildings": 77
+        },
+        "evidence": {
+          "region": [
+            155,
+            0,
+            737,
+            839
+          ],
+          "region_name": null,
+          "supporting_building_ids": [
+            11,
+            21,
+            39,
+            53
+          ],
+          "supporting_buildings": [
+            {
+              "building_id": 11,
+              "damage": "destroyed",
+              "confidence": 0.3113,
+              "centre": [
+                544.27,
+                812.15
+              ],
+              "bbox": [
+                528,
+                787,
+                563,
+                839
+              ]
+            },
+            {
+              "building_id": 21,
+              "damage": "destroyed",
+              "confidence": 0.2964,
+              "centre": [
+                718.33,
+                71.56
+              ],
+              "bbox": [
+                700,
+                53,
+                737,
+                92
+              ]
+            },
+            {
+              "building_id": 39,
+              "damage": "destroyed",
+              "confidence": 0.1385,
+              "centre": [
+                169.93,
+                13.56
+              ],
+              "bbox": [
+                155,
+                0,
+                186,
+                28
+              ]
+            },
+            {
+              "building_id": 53,
+              "damage": "destroyed",
+              "confidence": 0.1092,
+              "centre": [
+                594.66,
+                242.76
+              ],
+              "bbox": [
+                572,
+                230,
+                617,
+                257
+              ]
+            }
+          ],
+          "map_url": "/api/analysis/9e6910ef96aa4885b87e48c61a82a9a8/map?evidence=155,0,737,839&highlight=11,21,39,53",
+          "highlight_truncated": false
+        }
+      }
+    },
+    {
+      "official": {
+        "id": "q_quad",
+        "answer": "top-right",
+        "region": [
+          512,
+          0,
+          1024,
+          512
+        ]
+      },
+      "internal": {
+        "question_type": 2,
+        "question_text": "Which quadrant has the most damaged buildings?",
+        "parsed": {
+          "level": "damaged",
+          "scope": [
+            null,
+            null
+          ],
+          "halves": null,
+          "reason": null
+        },
+        "details": {
+          "level": "damaged",
+          "quadrant_counts": {
+            "top-left": 1,
+            "top-right": 2,
+            "bottom-left": 0,
+            "bottom-right": 1
+          },
+          "max_count": 2,
+          "winner": "top-right",
+          "min_confidence": 0.0,
+          "rules_version": "1.0.0",
+          "image_size": [
+            1024,
+            1024
+          ],
+          "total_buildings": 77
+        },
+        "evidence": {
+          "region": [
+            512,
+            0,
+            1024,
+            512
+          ],
+          "region_name": "top-right",
+          "supporting_building_ids": [
+            21,
+            53
+          ],
+          "supporting_buildings": [
+            {
+              "building_id": 21,
+              "damage": "destroyed",
+              "confidence": 0.2964,
+              "centre": [
+                718.33,
+                71.56
+              ],
+              "bbox": [
+                700,
+                53,
+                737,
+                92
+              ]
+            },
+            {
+              "building_id": 53,
+              "damage": "destroyed",
+              "confidence": 0.1092,
+              "centre": [
+                594.66,
+                242.76
+              ],
+              "bbox": [
+                572,
+                230,
+                617,
+                257
+              ]
+            }
+          ],
+          "map_url": "/api/analysis/9e6910ef96aa4885b87e48c61a82a9a8/map?evidence=512,0,1024,512&highlight=21,53",
+          "highlight_truncated": false
+        }
+      }
+    },
+    {
+      "official": {
+        "id": "q_struct",
+        "answer": 18,
+        "region": [
+          2,
+          0,
+          466,
+          410
+        ]
+      },
+      "internal": {
+        "question_type": 1,
+        "question_text": "structured: {\"type\":1,\"level\":\"no-damage\",\"scope\":{\"kind\":\"quadrant\",\"name\":\"top-left\"}}",
+        "parsed": {
+          "level": "no-damage",
+          "scope": [
+            "quadrant",
+            "top-left"
+          ],
+          "halves": null,
+          "reason": null
+        },
+        "details": {
+          "level": "no-damage",
+          "scope": [
+            "quadrant",
+            "top-left"
+          ],
+          "buildings_in_scope": 20,
+          "region_basis": "union_of_counted_buildings",
+          "min_confidence": 0.0,
+          "rules_version": "1.0.0",
+          "image_size": [
+            1024,
+            1024
+          ],
+          "total_buildings": 77
+        },
+        "evidence": {
+          "region": [
+            2,
+            0,
+            466,
+            410
+          ],
+          "region_name": null,
+          "supporting_building_ids": [
+            1,
+            5,
+            10,
+            17,
+            25,
+            28,
+            43,
+            47,
+            55,
+            58,
+            59,
+            60,
+            63,
+            64,
+            70,
+            73,
+            74,
+            76
+          ],
+          "supporting_buildings": [
+            {
+              "building_id": 1,
+              "damage": "no-damage",
+              "confidence": 0.5716,
+              "centre": [
+                32.02,
+                247.3
+              ],
+              "bbox": [
+                6,
+                223,
+                54,
+                270
+              ]
+            },
+            {
+              "building_id": 5,
+              "damage": "no-damage",
+              "confidence": 0.4368,
+              "centre": [
+                34.58,
+                199.85
+              ],
+              "bbox": [
+                9,
+                180,
+                63,
+                221
+              ]
+            },
+            {
+              "building_id": 10,
+              "damage": "no-damage",
+              "confidence": 0.3462,
+              "centre": [
+                434.6,
+                86.09
+              ],
+              "bbox": [
+                418,
+                66,
+                454,
+                108
+              ]
+            },
+            {
+              "building_id": 17,
+              "damage": "no-damage",
+              "confidence": 0.2327,
+              "centre": [
+                24.7,
+                310.78
+              ],
+              "bbox": [
+                9,
+                298,
+                40,
+                326
+              ]
+            },
+            {
+              "building_id": 25,
+              "damage": "no-damage",
+              "confidence": 0.3133,
+              "centre": [
+                373.45,
+                162.02
+              ],
+              "bbox": [
+                359,
+                147,
+                391,
+                179
+              ]
+            },
+            {
+              "building_id": 28,
+              "damage": "no-damage",
+              "confidence": 0.3116,
+              "centre": [
+                345.84,
+                27.02
+              ],
+              "bbox": [
+                328,
+                8,
+                365,
+                48
+              ]
+            },
+            {
+              "building_id": 43,
+              "damage": "no-damage",
+              "confidence": 0.2887,
+              "centre": [
+                383.27,
+                24.63
+              ],
+              "bbox": [
+                366,
+                3,
+                402,
+                47
+              ]
+            },
+            {
+              "building_id": 47,
+              "damage": "no-damage",
+              "confidence": 0.2063,
+              "centre": [
+                173.89,
+                74.01
+              ],
+              "bbox": [
+                144,
+                51,
+                208,
+                97
+              ]
+            },
+            {
+              "building_id": 55,
+              "damage": "no-damage",
+              "confidence": 0.272,
+              "centre": [
+                292.63,
+                82.99
+              ],
+              "bbox": [
+                274,
+                49,
+                319,
+                119
+              ]
+            },
+            {
+              "building_id": 58,
+              "damage": "no-damage",
+              "confidence": 0.2511,
+              "centre": [
+                299.34,
+                28.65
+              ],
+              "bbox": [
+                281,
+                14,
+                320,
+                45
+              ]
+            },
+            {
+              "building_id": 59,
+              "damage": "no-damage",
+              "confidence": 0.2521,
+              "centre": [
+                260.09,
+                13.82
+              ],
+              "bbox": [
+                246,
+                0,
+                274,
+                29
+              ]
+            },
+            {
+              "building_id": 60,
+              "damage": "no-damage",
+              "confidence": 0.2303,
+              "centre": [
+                282.44,
+                158.29
+              ],
+              "bbox": [
+                266,
+                140,
+                300,
+                176
+              ]
+            },
+            {
+              "building_id": 63,
+              "damage": "no-damage",
+              "confidence": 0.1074,
+              "centre": [
+                448.68,
+                344.32
+              ],
+              "bbox": [
+                432,
+                329,
+                466,
+                360
+              ]
+            },
+            {
+              "building_id": 64,
+              "damage": "no-damage",
+              "confidence": 0.2293,
+              "centre": [
+                138.02,
+                293.22
+              ],
+              "bbox": [
+                122,
+                248,
+                156,
+                342
+              ]
+            },
+            {
+              "building_id": 70,
+              "damage": "no-damage",
+              "confidence": 0.2565,
+              "centre": [
+                264.8,
+                233.68
+              ],
+              "bbox": [
+                248,
+                218,
+                282,
+                251
+              ]
+            },
+            {
+              "building_id": 73,
+              "damage": "no-damage",
+              "confidence": 0.2368,
+              "centre": [
+                13.48,
+                378.0
+              ],
+              "bbox": [
+                2,
+                361,
+                27,
+                396
+              ]
+            },
+            {
+              "building_id": 74,
+              "damage": "no-damage",
+              "confidence": 0.2513,
+              "centre": [
+                242.93,
+                159.67
+              ],
+              "bbox": [
+                227,
+                134,
+                265,
+                182
+              ]
+            },
+            {
+              "building_id": 76,
+              "damage": "no-damage",
+              "confidence": 0.2446,
+              "centre": [
+                410.89,
+                386.2
+              ],
+              "bbox": [
+                381,
+                363,
+                452,
+                410
+              ]
+            }
+          ],
+          "map_url": "/api/analysis/9e6910ef96aa4885b87e48c61a82a9a8/map?evidence=2,0,466,410&highlight=1,5,10,17,25,28,43,47,55,58,59,60,63,64,70,73,74,76",
+          "highlight_truncated": false
+        }
+      }
+    },
+    {
+      "official": {
+        "id": "q_halves",
+        "answer": "no",
+        "region": [
+          512,
+          0,
+          1024,
+          1024
+        ]
+      },
+      "internal": {
+        "question_type": 3,
+        "question_text": "structured: {\"type\":3,\"halves\":[\"left\",\"right\"]}",
+        "parsed": {
+          "level": null,
+          "scope": [
+            null,
+            null
+          ],
+          "halves": [
+            "left",
+            "right"
+          ],
+          "reason": null
+        },
+        "details": {
+          "first_half": "left",
+          "second_half": "right",
+          "damaged_counts": {
+            "left": 1,
+            "right": 3
+          },
+          "region_basis": "half_with_more_damaged",
+          "min_confidence": 0.0,
+          "rules_version": "1.0.0",
+          "image_size": [
+            1024,
+            1024
+          ],
+          "total_buildings": 77
+        },
+        "evidence": {
+          "region": [
+            512,
+            0,
+            1024,
+            1024
+          ],
+          "region_name": "right half",
+          "supporting_building_ids": [
+            11,
+            21,
+            53
+          ],
+          "supporting_buildings": [
+            {
+              "building_id": 11,
+              "damage": "destroyed",
+              "confidence": 0.3113,
+              "centre": [
+                544.27,
+                812.15
+              ],
+              "bbox": [
+                528,
+                787,
+                563,
+                839
+              ]
+            },
+            {
+              "building_id": 21,
+              "damage": "destroyed",
+              "confidence": 0.2964,
+              "centre": [
+                718.33,
+                71.56
+              ],
+              "bbox": [
+                700,
+                53,
+                737,
+                92
+              ]
+            },
+            {
+              "building_id": 53,
+              "damage": "destroyed",
+              "confidence": 0.1092,
+              "centre": [
+                594.66,
+                242.76
+              ],
+              "bbox": [
+                572,
+                230,
+                617,
+                257
+              ]
+            }
+          ],
+          "map_url": "/api/analysis/9e6910ef96aa4885b87e48c61a82a9a8/map?evidence=512,0,1024,1024&highlight=11,21,53",
+          "highlight_truncated": false
+        }
+      }
+    },
+    {
+      "official": {
+        "id": "q_hospital",
+        "answer": "cannot be determined",
+        "region": null
+      },
+      "internal": {
+        "question_type": 4,
+        "question_text": "Which building in the image is a hospital?",
+        "parsed": {
+          "level": null,
+          "scope": [
+            null,
+            null
+          ],
+          "halves": null,
+          "reason": "question is outside the supported damage-count/comparison types"
+        },
+        "details": {
+          "reason": "question is outside the supported damage-count/comparison types",
+          "min_confidence": 0.0,
+          "rules_version": "1.0.0",
+          "image_size": [
+            1024,
+            1024
+          ],
+          "total_buildings": 77
+        },
+        "evidence": {
+          "region": null,
+          "region_name": null,
+          "supporting_building_ids": [],
+          "supporting_buildings": [],
+          "map_url": null,
+          "highlight_truncated": false
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+﻿[
+    {
+        "file":  "siamese_damage.pth",
+        "bytes":  45447775,
+        "sha256":  "EC37B8D419FB87368B06552D0010522E1A1B62A8CD3508B954CF91C836FC3C35",
+        "source_sha256":  "EC37B8D419FB87368B06552D0010522E1A1B62A8CD3508B954CF91C836FC3C35",
+        "identical":  true
+    },
+    {
+        "file":  "siamese_damage_last.pth",
+        "bytes":  45448435,
+        "sha256":  "14760F05CD72B8D3D957E71D9A58F43F3383F686059986A79737AC63EDB313E0",
+        "source_sha256":  "14760F05CD72B8D3D957E71D9A58F43F3383F686059986A79737AC63EDB313E0",
+        "identical":  true
+    },
+    {
+        "file":  "yolo_best.pt",
+        "bytes":  34374436,
+        "sha256":  "F5B5E4ABC44B7A9D2811DA6B5796BC5940E45E1640AFD2B5B8FE5ED7D4482B26",
+        "source_sha256":  "F5B5E4ABC44B7A9D2811DA6B5796BC5940E45E1640AFD2B5B8FE5ED7D4482B26",
+        "identical":  true
+    },
+    {
+        "file":  "yolo_last.pt",
+        "bytes":  34374948,
+        "sha256":  "C3BD36C7E58F85A529B9A000769585D5D0F7EEC1987E6F40E732CB13FDAEFB0D",
+        "source_sha256":  "C3BD36C7E58F85A529B9A000769585D5D0F7EEC1987E6F40E732CB13FDAEFB0D",
+        "identical":  true
+    }
+]
