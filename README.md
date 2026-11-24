@@ -1,6 +1,16 @@
-# EAGLE-DAR
+<p align="center">
+  <img src="frontend/public/logo.png" alt="EAGLE-DAR logo" width="120" height="120">
+</p>
 
-**Evidence-Aware Geospatial Learning and Explanation for Disaster Assessment and Reasoning**
+<h1 align="center">EAGLE-DAR</h1>
+
+<p align="center"><b>Evidence-Aware Geospatial Learning and Explanation for Disaster Assessment and Reasoning</b><br>
+Earthquake &amp; Disaster Assessment using AI for Rapid Response</p>
+
+<p align="center">
+  <img src="docs/figures/dashboard.png" alt="EAGLE-DAR dashboard: building counts, before/after slider, damage classification donut and colour-coded damage map" width="100%">
+</p>
+<p align="center"><i>The dashboard after one analysis: KPI cards, before/after comparison slider, damage classification and the colour-coded damage map.</i></p>
 
 Upload a before and an after satellite image of a disaster area. EAGLE-DAR finds every building, grades its damage in
 three classes (no damage, major damage, destroyed) with a per-building confidence, answers PS-04 style counting/comparison questions with evidence regions,
@@ -9,6 +19,28 @@ draws a colour-coded damage map, and writes a detailed PDF assessment report wit
 > Research prototype. Results are model estimates that need field verification. It is not an official government system.
 > Read [docs/EVALUATION_REPORT.md](docs/EVALUATION_REPORT.md) before trusting any number: the current models are weak
 > (see "Honest status" below).
+
+## Features
+
+* **Building detection:** YOLOv8 segmentation finds every building footprint in the after image.
+* **Damage grading:** a Siamese ResNet18 compares each building's before and after crop and assigns one of three classes.
+* **Building-level confidence:** every building gets a confidence score (detection score x damage probability) rated high / medium / low.
+* **Damage map:** colour-coded polygons over the after image, with an interactive zoomable viewer and a before/after slider.
+* **Question answering:** PS-04 style counting and comparison questions ("how many destroyed buildings in the top-right quadrant?", "is the left half more damaged than the right half?") answered by deterministic code, each with an evidence region. Questions that cannot be answered from the images return "cannot be determined".
+* **PDF assessment report:** executive summary, class tables, spatial breakdown, evidence crops, measured model limitations and recommendations.
+* **Dashboard:** upload, results table with a building inspector, analytics charts, damage map page, reports page.
+
+### Damage classes
+
+| Class | Colour | Meaning |
+|---|---|---|
+| No damage | green | no visible damage in the after image |
+| Major damage | orange | visible structural damage (minor and major damage are reported together) |
+| Destroyed | red | collapsed, burnt or no longer standing |
+
+**Affected / damaged = major damage + destroyed.** The trained classifier still has five outputs; the pipeline ignores
+its "un-classified" output and adds its "minor damage" probability to "major damage" (`collapse_probs` in
+`inference/pipeline.py`). Questions that name minor damage or un-classified buildings answer "cannot be determined".
 
 ## The three project novelties
 
@@ -65,6 +97,28 @@ npm run e2e                          # real-browser end-to-end test (needs both 
 | `EAGLE_MAX_UPLOAD_MB`, `EAGLE_MAX_PIXELS`, `EAGLE_MAX_PENDING` | 25, 16.7 M, 4 | upload and queue limits |
 | `EAGLE_LLM_ENABLED` | `0` | `1` lets an LLM rephrase the report's explanation text (needs `ANTHROPIC_API_KEY`). Off by default; if on, only aggregate counts and IDs are sent, never images, file names or location labels; text containing any number not in the facts is rejected and the template is used |
 | `VITE_API_BASE_URL` (frontend) | `http://127.0.0.1:8000` | backend address |
+
+## API
+
+Interactive docs at `http://127.0.0.1:8000/docs` once the backend is running.
+
+| Method | Endpoint | Purpose |
+|---|---|---|
+| `GET` | `/api/health` | backend status, model availability, CUDA |
+| `POST` | `/api/analyze` | upload before + after image, run the pipeline, returns an analysis ID |
+| `GET` | `/api/analysis/{id}` | stored buildings, counts, statistics |
+| `GET` | `/api/analysis/{id}/map` | colour-coded damage map (PNG) |
+| `POST` | `/api/questions` | answer PS-04 style questions for an analysis |
+| `GET` | `/api/analysis/{id}/export` | official-format answers (`id`, `answer`, `region`) |
+| `POST` | `/api/analysis/{id}/reports` | start PDF report generation |
+| `GET` | `/api/reports/{report_id}/download` | download the PDF |
+
+Full details: [docs/PHASE3_BACKEND_API.md](docs/PHASE3_BACKEND_API.md).
+
+## Tech stack
+
+Python 3.11, PyTorch, Ultralytics YOLOv8-seg, torchvision (ResNet18), OpenCV, Shapely, FastAPI, ReportLab;
+React, TypeScript, Vite, Recharts; pytest, Vitest and a Playwright-driven end-to-end test.
 
 ## Documentation
 
